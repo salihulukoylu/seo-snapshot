@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "SEO Snapshot",
+  "version": "1.0",
+  "description": "Quickly analyze SEO and technical aspects of any web page.",
+  "permissions": ["storage", "scripting", "tabs", "webRequest"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
